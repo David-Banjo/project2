@@ -1,0 +1,68 @@
+;if(CloudflareApps.matchPage(CloudflareApps.installs['ijIGB6mHhHsN'].URLPatterns)){(function(){"use strict"
+if(!window.addEventListener)return
+var options=CloudflareApps.installs['ijIGB6mHhHsN'].options
+var element
+function getMaxZIndex(){var max=0
+var elements=document.getElementsByTagName('*')
+Array.prototype.slice.call(elements).forEach(function(element){var zIndex=parseInt(document.defaultView.getComputedStyle(element).zIndex,10)
+max=zIndex?Math.max(max,zIndex):max})
+return max}
+function inIframe(){try{if("ijIGB6mHhHsN"==='preview'){return window.top!==window.parent.parent}
+return window.self!==window.top}catch(e){return true}}
+function updateElement(){let localStorageValid=localStorage.tibrrCookieConsent&&new Date(parseInt(localStorage.tibrrCookieConsent,10))>=new Date()
+let isConsent=!((!inIframe())&&("ijIGB6mHhHsN"==='preview'||((localStorageValid===false)||(localStorageValid===undefined))));if(!((options.callbackFunction=="")||(options.callbackFunction==null))){window.onload=function(){let fn=window[options.callbackFunction]
+if(typeof fn==='function'){fn(isConsent);}}}
+if(!isConsent){for(let option in options){if(option===undefined)return false}
+let popupLocation={"selector":"body","method":"prepend"}
+if(options.popupPositioning=="static"){popupLocation=options.popupLocation}
+element=CloudflareApps.createElement(popupLocation,element)
+element.setAttribute('app','tibrr-cookie-consent')
+element.style.backgroundColor=options.backgroundColor
+element.style.opacity=options.backgroundOpacity
+if(options.location=='top'){element.style.top='0'}else{element.style.bottom='0'}
+element.style.zIndex=(options.popupPositioning=="static")?element.style.zIndex:getMaxZIndex()+1
+element.style.position=options.popupPositioning
+let elementContainer=document.createElement('DIV')
+elementContainer.className='tibrr-cookie-consent-container'
+if(options.splitTextAndButton){elementContainer.style.justifyContent="space-between"}else{elementContainer.style.justifyContent="center"}
+element.appendChild(elementContainer)
+let elementTextLink=document.createElement("a")
+elementTextLink.textContent=options.textLink
+elementTextLink.title=options.textLink
+elementTextLink.href=options.textLinkUrl
+if(options.textLinkNewTab){elementTextLink.target="_blank"}
+let elementText=document.createElement("DIV")
+elementText.className='tibrr-cookie-consent-text'
+elementText.textContent=options.message+' '
+elementText.style.fontSize=options.textSize.value+options.textSize.unit
+elementText.style.color=options.textColor
+elementText.appendChild(elementTextLink)
+let elementButtonContainer=document.createElement('DIV')
+elementButtonContainer.className='tibrr-cookie-consent-button'
+if(options.buttonLocation=="right"){elementContainer.appendChild(elementText)
+elementContainer.appendChild(elementButtonContainer)}else if(options.buttonLocation=="left"){elementContainer.appendChild(elementButtonContainer)
+elementContainer.appendChild(elementText)}
+let elementButton=document.createElement('BUTTON')
+elementButton.textContent=options.buttonText
+elementButton.style.borderColor=options.buttonBorderColor
+elementButton.style.fontSize=options.buttonTextSize.value+options.buttonTextSize.unit
+elementButtonContainer.appendChild(elementButton)
+let elementStyle=document.createElement('STYLE')
+elementStyle.innerHTML='cloudflare-app[app="tibrr-cookie-consent"] > .tibrr-cookie-consent-container > .tibrr-cookie-consent-button > button {background-color: '+options.buttonColor+'; color: '+options.buttonTextColor+';} cloudflare-app[app="tibrr-cookie-consent"] > .tibrr-cookie-consent-container > .tibrr-cookie-consent-button > button:hover {background-color: '+options.buttonHoverColor+'; color: '+options.buttonHoverTextColor+';} cloudflare-app[app="tibrr-cookie-consent"] > .tibrr-cookie-consent-container > .tibrr-cookie-consent-text > a {color: '+options.textLinkColor+'} cloudflare-app[app="tibrr-cookie-consent"] > .tibrr-cookie-consent-container > .tibrr-cookie-consent-text > a:hover {color: '+options.textLinkHoverColor+'}';element.appendChild(elementStyle)
+elementButton.onclick=function(){if("ijIGB6mHhHsN"!='preview'){let fn=window[options.callbackFunction]
+if(typeof fn==='function'){fn(true);}
+element.style.display='none'
+let askAgainIn=new Date()
+switch(options.cookieLifetime){case'1':askAgainIn.setDate(askAgainIn.getDate()+9999);break;case'2':askAgainIn.setDate(askAgainIn.getDate()+0);break;case'3':askAgainIn.setDate(askAgainIn.getDate()+1);break;case'4':askAgainIn.setDate(askAgainIn.getDate()+30);break;case'5':askAgainIn.setDate(askAgainIn.getDate()+365);break;default:askAgainIn.setDate(askAgainIn.getDate()+30);}
+localStorage.tibrrCookieConsent=askAgainIn.getTime()}}}}
+if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",updateElement)}else{updateElement()}
+window.CloudflareApps.installs['ijIGB6mHhHsN'].scope={setOptions:function setOptions(nextOptions){options=nextOptions
+updateElement()}}}())};if(CloudflareApps.matchPage(CloudflareApps.installs['XKyzUcoH8wSv'].URLPatterns)){(function(modules){var installedModules={};function __webpack_require__(moduleId){if(installedModules[moduleId]){return installedModules[moduleId].exports;}
+var module=installedModules[moduleId]={i:moduleId,l:false,exports:{}};modules[moduleId].call(module.exports,module,module.exports,__webpack_require__);module.l=true;return module.exports;}
+__webpack_require__.m=modules;__webpack_require__.c=installedModules;__webpack_require__.d=function(exports,name,getter){if(!__webpack_require__.o(exports,name)){Object.defineProperty(exports,name,{enumerable:true,get:getter});}};__webpack_require__.r=function(exports){if(typeof Symbol!=='undefined'&&Symbol.toStringTag){Object.defineProperty(exports,Symbol.toStringTag,{value:'Module'});}
+Object.defineProperty(exports,'__esModule',{value:true});};__webpack_require__.t=function(value,mode){if(mode&1)value=__webpack_require__(value);if(mode&8)return value;if((mode&4)&&typeof value==='object'&&value&&value.__esModule)return value;var ns=Object.create(null);__webpack_require__.r(ns);Object.defineProperty(ns,'default',{enumerable:true,value:value});if(mode&2&&typeof value!='string')for(var key in value)__webpack_require__.d(ns,key,function(key){return value[key];}.bind(null,key));return ns;};__webpack_require__.n=function(module){var getter=module&&module.__esModule?function getDefault(){return module['default'];}:function getModuleExports(){return module;};__webpack_require__.d(getter,'a',getter);return getter;};__webpack_require__.o=function(object,property){return Object.prototype.hasOwnProperty.call(object,property);};__webpack_require__.p="";return __webpack_require__(__webpack_require__.s="./src/index.js");})
+({"./src/index.js":(function(module,exports,__webpack_require__){"use strict";function get_host_name(){if("XKyzUcoH8wSv"=='preview'){console.log('preview mode');return CloudflareApps.proxy.originalURL.parsed.host;}else{return window.location.hostname;}}
+function check_plan(){var options=CloudflareApps.installs['XKyzUcoH8wSv'].options;var product=CloudflareApps.installs['XKyzUcoH8wSv'].product;if(product&&product.id==='google-analytics-pro'){console.log('CF-GA: Thank you for installing pro :)');}else{console.log('CF-GA: Please update to pro in order to get more features.');}}
+function init(){check_plan();var current_host=get_host_name();var sub_domain_tracker_ids=CloudflareApps.installs['XKyzUcoH8wSv'].options.subdomain_tracker_ids;var options=CloudflareApps.installs['XKyzUcoH8wSv'].options;var product=CloudflareApps.installs['XKyzUcoH8wSv'].product;if(product&&product.id==='google-analytics-pro'&&true){var subdomain_tracker=sub_domain_tracker_ids.filter(function(item){return item.subdomain==current_host;});if(subdomain_tracker[0]&&subdomain_tracker[0].tracker_id){send_to_google_analytics(subdomain_tracker[0].tracker_id);}else{send_to_google_analytics(CloudflareApps.installs['XKyzUcoH8wSv'].options.tracker_id);}}else{send_to_google_analytics(CloudflareApps.installs['XKyzUcoH8wSv'].options.tracker_id);}}
+function send_to_google_analytics(tracker_id){console.log('CF-GA: '+get_host_name()+" is using "+tracker_id);if(tracker_id!="UA-XXXXX-Y"){var gtag=function gtag(){dataLayer.push(arguments);};var url="https://www.googletagmanager.com/gtag/js?id="+tracker_id;(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments);},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m);})(window,document,'script',url,'ga');window.dataLayer=window.dataLayer||[];gtag('js',new Date());gtag('config',tracker_id);}}
+init();})});};(function(){try{var link=document.createElement('link');link.rel='stylesheet';link.href='data:text/css;charset=utf-8;base64,Y2xvdWRmbGFyZS1hcHBbYXBwPSJ0aWJyci1jb29raWUtY29uc2VudCJdIHsNCglmb250LXNpemU6IDEuMmVtOw0KCXdpZHRoOiAxMDAlOw0KCWxlZnQ6IDA7DQp9DQpjbG91ZGZsYXJlLWFwcFthcHA9InRpYnJyLWNvb2tpZS1jb25zZW50Il0gPiAudGlicnItY29va2llLWNvbnNlbnQtY29udGFpbmVyIHsNCglkaXNwbGF5OiAtd2Via2l0LWZsZXg7DQogICAgZGlzcGxheTogZmxleDsNCglwYWRkaW5nOiAwLjVlbTsNCiAgICAtd2Via2l0LWFsaWduLWl0ZW1zOiBjZW50ZXI7DQogICAgYWxpZ24taXRlbXM6IGNlbnRlcjsNCiAgICAtd2Via2l0LWZsZXgtd3JhcDogbm93cmFwOw0KICAgIGZsZXgtd3JhcDogbm93cmFwOw0KfQ0KY2xvdWRmbGFyZS1hcHBbYXBwPSJ0aWJyci1jb29raWUtY29uc2VudCJdID4gLnRpYnJyLWNvb2tpZS1jb25zZW50LWNvbnRhaW5lciA+IGRpdiB7DQoJbWFyZ2luOiAwLjVlbTsNCn0NCmNsb3VkZmxhcmUtYXBwW2FwcD0idGlicnItY29va2llLWNvbnNlbnQiXSA+IC50aWJyci1jb29raWUtY29uc2VudC1jb250YWluZXIgPiAudGlicnItY29va2llLWNvbnNlbnQtdGV4dCB7DQoJdGV4dC1hbGlnbjogY2VudGVyOw0KCXdvcmQtYnJlYWs6IG5vcm1hbDsNCg0KfQ0KY2xvdWRmbGFyZS1hcHBbYXBwPSJ0aWJyci1jb29raWUtY29uc2VudCJdID4gLnRpYnJyLWNvb2tpZS1jb25zZW50LWNvbnRhaW5lciA+IC50aWJyci1jb29raWUtY29uc2VudC1idXR0b24gew0KCXRleHQtYWxpZ246IHJpZ2h0Ow0KfQ0KY2xvdWRmbGFyZS1hcHBbYXBwPSJ0aWJyci1jb29raWUtY29uc2VudCJdID4gLnRpYnJyLWNvb2tpZS1jb25zZW50LWNvbnRhaW5lciA+IC50aWJyci1jb29raWUtY29uc2VudC1idXR0b24gPiBidXR0b24gew0KCWJvcmRlci1yYWRpdXM6IDAuNWVtOw0KCWJvcmRlcjogMC4wNWVtIHNvbGlkOw0KCXBhZGRpbmc6IDAuNGVtIDFlbTsNCgl3b3JkLWJyZWFrOiBub3JtYWw7DQp9DQpjbG91ZGZsYXJlLWFwcFthcHA9InRpYnJyLWNvb2tpZS1jb25zZW50Il0gPiAudGlicnItY29va2llLWNvbnNlbnQtY29udGFpbmVyID4gLnRpYnJyLWNvb2tpZS1jb25zZW50LWJ1dHRvbiA+IGJ1dHRvbjpob3ZlciB7DQoJY3Vyc29yOiBwb2ludGVyOw0KfQ==';document.getElementsByTagName('head')[0].appendChild(link);}catch(e){}})();
